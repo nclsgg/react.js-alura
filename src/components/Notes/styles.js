@@ -16,12 +16,5 @@ export const Container = styled.div`
     li + li {
       margin-top: 1rem;
     }
-
-    li {
-      .category {
-        color: var(--text-body);
-        margin-bottom: 0.25rem;
-      }
-    }
   }
 `

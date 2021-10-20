@@ -2,7 +2,7 @@ import { Container } from './styles'
 
 function NoteCard() {
   return (
-    <>
+    <li>
       <Container>
         <header>
           <h3>Estudar frontend</h3>
@@ -12,7 +12,7 @@ function NoteCard() {
           horas da tarde.
         </p>
       </Container>
-    </>
+    </li>
   )
 }
 
