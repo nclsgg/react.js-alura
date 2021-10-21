@@ -1,34 +1,34 @@
-import { useState } from 'react'
 import { Container } from './styles'
+import { useState } from 'react'
 
-function Form() {
-  const [Title, setTitle] = useState('')
-  const [Note, setNote] = useState('')
+function Form({ handleAddNote }) {
+  const [title, setTitle] = useState('')
+  const [body, setBody] = useState('')
 
-  const handleTitle = (e) => {
-    setTitle(e)
-    console.log(Title)
+  const handleTitle = (event) => {
+    setTitle(event.target.value)
   }
 
-  const handleNote = (e) => {
-    setNote(e)
-    console.log(Note)
+  const handleBody = (event) => {
+    setBody(event.target.value)
+  }
+
+  const handleSaveClick = () => {
+    if (title.trim().length > 0 && body.trim().length > 0) {
+      handleAddNote(title, body)
+    }
   }
 
   return (
     <Container>
-      <form>
-        <input
-          type="text"
-          placeholder="Título"
-          onChange={(e) => handleTitle(e.target.value)}
-        />
-        <textarea
-          placeholder="Escreva sua nota..."
-          onChange={(e) => handleNote(e.target.value)}
-        />
-        <button>Criar Nota</button>
-      </form>
+      <input type="text" placeholder="Título" onChange={handleTitle} />
+      <textarea
+        rows={8}
+        placeholder="Escreva sua nota..."
+        value={body}
+        onChange={handleBody}
+      />
+      <button onClick={handleSaveClick}>Criar Nota</button>
     </Container>
   )
 }

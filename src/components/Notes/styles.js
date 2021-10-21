@@ -6,15 +6,23 @@ export const Container = styled.div`
   justify-content: center;
   margin: 2.5rem auto;
   padding: 0 2.5rem;
-  max-width: 500px;
+  max-width: 1120px;
 
-  ul {
+  .notes {
+    max-width: 500px;
     display: flex;
     flex-direction: column;
-    list-style-type: none;
+    justify-content: center;
+    margin: 0 auto;
 
-    li + li {
-      margin-top: 1rem;
+    ul {
+      display: flex;
+      flex-direction: column;
+      list-style-type: none;
+
+      li + li {
+        margin-top: 1rem;
+      }
     }
   }
 `
